@@ -10,7 +10,7 @@ authors = ["sbneo2022"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "3.11.2"
+python = "3.11.*"
 grpcio = "1.51.1"
 grpcio-tools = "1.51.1"
 protobuf = "4.21.12"
