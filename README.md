@@ -102,3 +102,11 @@ The publish workflow looks like this:
    ```
 
 4. The tag will trigger a [GitHub Action Workflow](https://github.com/sbneo2022/osmosispy/actions/workflows/publish.yml).
+
+
+## Convert ProtoBuf Files to Python
+
+In the scripts/generate_python_from_protobuf.py file, you can convert the proto files to python files
+Choose the paths of the proto files you want to convert and a folder tmp will he created when runned successfully
+If the script retrieves an error of File not found, probably there is a dependency that is not present. 
+You can copy the dependency search in GitHub and add the new proto files to the repos_protobufs folder

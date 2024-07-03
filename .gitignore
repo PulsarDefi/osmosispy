@@ -1,5 +1,6 @@
 *.logs
 
+tmp
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -143,5 +144,5 @@ cython_debug/
 .vscode
 
 /pyvenv.cfg
-/Scripts
+
 /share
