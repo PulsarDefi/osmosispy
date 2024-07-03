@@ -9,8 +9,8 @@ def validate_proto_file(file_path):
         sys.exit(1)
 
 
-GENERATED_DIR = "./tmp"
-ROOT_PROTO_DIR = "./repos_protobufs"
+GENERATED_DIR = "./../tmp"
+ROOT_PROTO_DIR = "./../repos_protobufs"
 COSMOS_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "cosmos")
 IBC_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "ibc")
 COSMWASM_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "cosmwasm")
