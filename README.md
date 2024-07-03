@@ -106,7 +106,30 @@ The publish workflow looks like this:
 
 ## Convert ProtoBuf Files to Python
 
-1. In the scripts/generate_python_from_protobuf.py file, you can convert the proto files to python files
-2. Choose the paths of the proto files you want to convert and a folder tmp will he created when runned successfully
-3. If the script retrieves an error of File not found, probably there is a dependency that is not present. 
-4. You can copy the dependency, search it in GitHub and add the new proto files to the repos_protobufs folder
+1. **Some background**:
+   - The Osmosis SDK uses protobuf files to communicate with the osmosis chain, similar to the Cosmos SDK.
+   - The protobuf files of the most important SDKs on Cosmos are located in the `repos_protobufs` folder.
+   - The Python files converted from `repos_protobufs` are located in the `osmosis_proto` folder.
+
+2. In the `scripts/generate_python_from_protobuf.py` file, you can convert the proto files to Python files.
+
+3. In the variable `PROTO_FILES`, there are two examples:
+   - `concentratedliquidity/v1beta1/query.proto`
+   - `concentratedliquidity/v1beta1/tick_info.proto`
+
+4. Choose the paths of the proto files you want to convert. You can add more proto files to `PROTO_FILES` to be converted into Python files.
+
+5. Run the script with the command `python generate_python_from_protobuf.py` in the directory of the script:
+   ```sh
+   python generate_python_from_protobuf.py
+   ```
+
+   - If the script runs successfully, the Python files will be generated in the `tmp` folder. Copy the files to their destination in the `osmosis_proto` folder. Try to maintain the same folder structure as the `repos_protobufs` folder, like how the protobuf files are organized.
+
+   - If the script retrieves a "File not found" error, there is probably a missing dependency. This means some protobuf files of some SDK are not present in the `repos_protobufs` folder.
+     1. The error will provide the name of the missing dependency.
+     2. Copy the dependency name, search for it on GitHub, and add the new proto files to the `repos_protobufs` folder.
+     3. After step 4, add the new path of the proto SDK repositories to the global variable, as in the example:
+        ```python
+        GOGO_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "gogoproto")
+        ```

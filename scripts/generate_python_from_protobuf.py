@@ -9,6 +9,7 @@ def validate_proto_file(file_path):
         sys.exit(1)
 
 
+# Define the directories of the SDK repositories
 GENERATED_DIR = "./../tmp"
 ROOT_PROTO_DIR = "./../repos_protobufs"
 COSMOS_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "cosmos")
@@ -20,18 +21,8 @@ GOGO_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "gogoproto")
 
 # Choose the files you want to convert
 PROTO_FILES = [
-    os.path.join(
-        OSMOSIS_PROTO_DIR,
-        "concentratedliquidity/poolmodel/concentrated/v1beta1/tx.proto",
-    ),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/genesis.proto"),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/gov.proto"),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/incentive_record.proto"),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/pool.proto"),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/position.proto"),
     os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/query.proto"),
     os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/tick_info.proto"),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/tx.proto"),
 ]
 
 os.makedirs(GENERATED_DIR, exist_ok=True)
