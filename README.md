@@ -129,7 +129,7 @@ The publish workflow looks like this:
    - If the script retrieves a "File not found" error, there is probably a missing dependency. This means some protobuf files of some SDK are not present in the `repos_protobufs` folder.
      1. The error will provide the name of the missing dependency.
      2. Copy the dependency name, search for it on GitHub, and add the new proto files to the `repos_protobufs` folder.
-     3. Add the new path of the proto SDK repositories to the global variable, as in the example:
+     3. Add the new path of the proto SDK repositories to the global variables, as in the example:
         ```python
         GOGO_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "gogoproto")
         ```
