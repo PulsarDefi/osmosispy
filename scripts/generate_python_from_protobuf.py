@@ -21,6 +21,8 @@ GOGO_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "gogoproto")
 
 # Choose the files you want to convert
 PROTO_FILES = [
+    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/poolmodel/concentrated/v1beta1/tx.proto"),
+    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/params.proto"),
     os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/genesis.proto"),
     os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/gov.proto"),
     os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/incentive_record.proto"),
@@ -42,7 +44,7 @@ for proto_file in PROTO_FILES:
         "protoc",
         f"--proto_path={ROOT_PROTO_DIR}",
         f"--python_out={GENERATED_DIR}",
-        f"--mypy_out=.",
+        f"--mypy_out={GENERATED_DIR}",
         proto_file,
     ]
     try:
