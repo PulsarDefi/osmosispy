@@ -6,17 +6,9 @@
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
-from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-_runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC,
-    5,
-    27,
-    1,
-    '',
-    'osmosis/concentratedliquidity/v1beta1/pool.proto'
-)
+
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -27,36 +19,56 @@ from gogoproto import gogo_pb2 as gogoproto_dot_gogo__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0osmosis/concentratedliquidity/v1beta1/pool.proto\x12%osmosis.concentratedliquidity.v1beta1\x1a\x19\x63osmos_proto/cosmos.proto\x1a\x14gogoproto/gogo.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x90\x06\n\x04Pool\x12#\n\x07\x61\x64\x64ress\x18\x01 \x01(\tB\x12\xf2\xde\x1f\x0eyaml:\"address\"\x12\x39\n\x12incentives_address\x18\x02 \x01(\tB\x1d\xf2\xde\x1f\x19yaml:\"incentives_address\"\x12\x41\n\x16spread_rewards_address\x18\x03 \x01(\tB!\xf2\xde\x1f\x1dyaml:\"spread_rewards_address\"\x12\n\n\x02id\x18\x04 \x01(\x04\x12\x64\n\x16\x63urrent_tick_liquidity\x18\x05 \x01(\tBD\xc8\xde\x1f\x00\xda\xde\x1f\x1b\x63osmossdk.io/math.LegacyDec\xf2\xde\x1f\x1dyaml:\"current_tick_liquidity\"\x12\x0e\n\x06token0\x18\x06 \x01(\t\x12\x0e\n\x06token1\x18\x07 \x01(\t\x12h\n\x12\x63urrent_sqrt_price\x18\x08 \x01(\tBL\xc8\xde\x1f\x00\xda\xde\x1f/github.com/osmosis-labs/osmosis/osmomath.BigDec\xf2\xde\x1f\x11yaml:\"spot_price\"\x12-\n\x0c\x63urrent_tick\x18\t \x01(\x03\x42\x17\xf2\xde\x1f\x13yaml:\"current_tick\"\x12-\n\x0ctick_spacing\x18\n \x01(\x04\x42\x17\xf2\xde\x1f\x13yaml:\"tick_spacing\"\x12?\n\x15\x65xponent_at_price_one\x18\x0b \x01(\x03\x42 \xf2\xde\x1f\x1cyaml:\"exponent_at_price_one\"\x12R\n\rspread_factor\x18\x0c \x01(\tB;\xc8\xde\x1f\x00\xda\xde\x1f\x1b\x63osmossdk.io/math.LegacyDec\xf2\xde\x1f\x14yaml:\"spread_factor\"\x12\x63\n\x15last_liquidity_update\x18\r \x01(\x0b\x32\x1a.google.protobuf.TimestampB(\xc8\xde\x1f\x00\xf2\xde\x1f\x1cyaml:\"last_liquidity_update\"\x90\xdf\x1f\x01:\x11\x88\xa0\x1f\x00\x98\xa0\x1f\x00\xca\xb4-\x05PoolIBDZBgithub.com/osmosis-labs/osmosis/v25/x/concentrated-liquidity/modelb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
+    b'\n0osmosis/concentratedliquidity/v1beta1/pool.proto\x12%osmosis.concentratedliquidity.v1beta1\x1a\x19\x63osmos_proto/cosmos.proto\x1a\x14gogoproto/gogo.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x90\x06\n\x04Pool\x12#\n\x07\x61\x64\x64ress\x18\x01 \x01(\tB\x12\xf2\xde\x1f\x0eyaml:\"address\"\x12\x39\n\x12incentives_address\x18\x02 \x01(\tB\x1d\xf2\xde\x1f\x19yaml:\"incentives_address\"\x12\x41\n\x16spread_rewards_address\x18\x03 \x01(\tB!\xf2\xde\x1f\x1dyaml:\"spread_rewards_address\"\x12\n\n\x02id\x18\x04 \x01(\x04\x12\x64\n\x16\x63urrent_tick_liquidity\x18\x05 \x01(\tBD\xc8\xde\x1f\x00\xda\xde\x1f\x1b\x63osmossdk.io/math.LegacyDec\xf2\xde\x1f\x1dyaml:\"current_tick_liquidity\"\x12\x0e\n\x06token0\x18\x06 \x01(\t\x12\x0e\n\x06token1\x18\x07 \x01(\t\x12h\n\x12\x63urrent_sqrt_price\x18\x08 \x01(\tBL\xc8\xde\x1f\x00\xda\xde\x1f/github.com/osmosis-labs/osmosis/osmomath.BigDec\xf2\xde\x1f\x11yaml:\"spot_price\"\x12-\n\x0c\x63urrent_tick\x18\t \x01(\x03\x42\x17\xf2\xde\x1f\x13yaml:\"current_tick\"\x12-\n\x0ctick_spacing\x18\n \x01(\x04\x42\x17\xf2\xde\x1f\x13yaml:\"tick_spacing\"\x12?\n\x15\x65xponent_at_price_one\x18\x0b \x01(\x03\x42 \xf2\xde\x1f\x1cyaml:\"exponent_at_price_one\"\x12R\n\rspread_factor\x18\x0c \x01(\tB;\xc8\xde\x1f\x00\xda\xde\x1f\x1b\x63osmossdk.io/math.LegacyDec\xf2\xde\x1f\x14yaml:\"spread_factor\"\x12\x63\n\x15last_liquidity_update\x18\r \x01(\x0b\x32\x1a.google.protobuf.TimestampB(\xc8\xde\x1f\x00\xf2\xde\x1f\x1cyaml:\"last_liquidity_update\"\x90\xdf\x1f\x01:\x11\x88\xa0\x1f\x00\x98\xa0\x1f\x00\xca\xb4-\x05PoolIBDZBgithub.com/osmosis-labs/osmosis/v25/x/concentrated-liquidity/modelb\x06proto3'
+)
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'osmosis.concentratedliquidity.v1beta1.pool_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-  _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'ZBgithub.com/osmosis-labs/osmosis/v25/x/concentrated-liquidity/model'
-  _globals['_POOL'].fields_by_name['address']._loaded_options = None
-  _globals['_POOL'].fields_by_name['address']._serialized_options = b'\362\336\037\016yaml:\"address\"'
-  _globals['_POOL'].fields_by_name['incentives_address']._loaded_options = None
-  _globals['_POOL'].fields_by_name['incentives_address']._serialized_options = b'\362\336\037\031yaml:\"incentives_address\"'
-  _globals['_POOL'].fields_by_name['spread_rewards_address']._loaded_options = None
-  _globals['_POOL'].fields_by_name['spread_rewards_address']._serialized_options = b'\362\336\037\035yaml:\"spread_rewards_address\"'
-  _globals['_POOL'].fields_by_name['current_tick_liquidity']._loaded_options = None
-  _globals['_POOL'].fields_by_name['current_tick_liquidity']._serialized_options = b'\310\336\037\000\332\336\037\033cosmossdk.io/math.LegacyDec\362\336\037\035yaml:\"current_tick_liquidity\"'
-  _globals['_POOL'].fields_by_name['current_sqrt_price']._loaded_options = None
-  _globals['_POOL'].fields_by_name['current_sqrt_price']._serialized_options = b'\310\336\037\000\332\336\037/github.com/osmosis-labs/osmosis/osmomath.BigDec\362\336\037\021yaml:\"spot_price\"'
-  _globals['_POOL'].fields_by_name['current_tick']._loaded_options = None
-  _globals['_POOL'].fields_by_name['current_tick']._serialized_options = b'\362\336\037\023yaml:\"current_tick\"'
-  _globals['_POOL'].fields_by_name['tick_spacing']._loaded_options = None
-  _globals['_POOL'].fields_by_name['tick_spacing']._serialized_options = b'\362\336\037\023yaml:\"tick_spacing\"'
-  _globals['_POOL'].fields_by_name['exponent_at_price_one']._loaded_options = None
-  _globals['_POOL'].fields_by_name['exponent_at_price_one']._serialized_options = b'\362\336\037\034yaml:\"exponent_at_price_one\"'
-  _globals['_POOL'].fields_by_name['spread_factor']._loaded_options = None
-  _globals['_POOL'].fields_by_name['spread_factor']._serialized_options = b'\310\336\037\000\332\336\037\033cosmossdk.io/math.LegacyDec\362\336\037\024yaml:\"spread_factor\"'
-  _globals['_POOL'].fields_by_name['last_liquidity_update']._loaded_options = None
-  _globals['_POOL'].fields_by_name['last_liquidity_update']._serialized_options = b'\310\336\037\000\362\336\037\034yaml:\"last_liquidity_update\"\220\337\037\001'
-  _globals['_POOL']._loaded_options = None
-  _globals['_POOL']._serialized_options = b'\210\240\037\000\230\240\037\000\312\264-\005PoolI'
-  _globals['_POOL']._serialized_start=174
-  _globals['_POOL']._serialized_end=958
+    _globals['DESCRIPTOR']._loaded_options = None
+    _globals['DESCRIPTOR']._serialized_options = b'ZBgithub.com/osmosis-labs/osmosis/v25/x/concentrated-liquidity/model'
+    _globals['_POOL'].fields_by_name['address']._loaded_options = None
+    _globals['_POOL'].fields_by_name['address']._serialized_options = b'\362\336\037\016yaml:\"address\"'
+    _globals['_POOL'].fields_by_name['incentives_address']._loaded_options = None
+    _globals['_POOL'].fields_by_name[
+        'incentives_address'
+    ]._serialized_options = b'\362\336\037\031yaml:\"incentives_address\"'
+    _globals['_POOL'].fields_by_name['spread_rewards_address']._loaded_options = None
+    _globals['_POOL'].fields_by_name[
+        'spread_rewards_address'
+    ]._serialized_options = b'\362\336\037\035yaml:\"spread_rewards_address\"'
+    _globals['_POOL'].fields_by_name['current_tick_liquidity']._loaded_options = None
+    _globals['_POOL'].fields_by_name[
+        'current_tick_liquidity'
+    ]._serialized_options = (
+        b'\310\336\037\000\332\336\037\033cosmossdk.io/math.LegacyDec\362\336\037\035yaml:\"current_tick_liquidity\"'
+    )
+    _globals['_POOL'].fields_by_name['current_sqrt_price']._loaded_options = None
+    _globals['_POOL'].fields_by_name[
+        'current_sqrt_price'
+    ]._serialized_options = b'\310\336\037\000\332\336\037/github.com/osmosis-labs/osmosis/osmomath.BigDec\362\336\037\021yaml:\"spot_price\"'
+    _globals['_POOL'].fields_by_name['current_tick']._loaded_options = None
+    _globals['_POOL'].fields_by_name['current_tick']._serialized_options = b'\362\336\037\023yaml:\"current_tick\"'
+    _globals['_POOL'].fields_by_name['tick_spacing']._loaded_options = None
+    _globals['_POOL'].fields_by_name['tick_spacing']._serialized_options = b'\362\336\037\023yaml:\"tick_spacing\"'
+    _globals['_POOL'].fields_by_name['exponent_at_price_one']._loaded_options = None
+    _globals['_POOL'].fields_by_name[
+        'exponent_at_price_one'
+    ]._serialized_options = b'\362\336\037\034yaml:\"exponent_at_price_one\"'
+    _globals['_POOL'].fields_by_name['spread_factor']._loaded_options = None
+    _globals['_POOL'].fields_by_name[
+        'spread_factor'
+    ]._serialized_options = (
+        b'\310\336\037\000\332\336\037\033cosmossdk.io/math.LegacyDec\362\336\037\024yaml:\"spread_factor\"'
+    )
+    _globals['_POOL'].fields_by_name['last_liquidity_update']._loaded_options = None
+    _globals['_POOL'].fields_by_name[
+        'last_liquidity_update'
+    ]._serialized_options = b'\310\336\037\000\362\336\037\034yaml:\"last_liquidity_update\"\220\337\037\001'
+    _globals['_POOL']._loaded_options = None
+    _globals['_POOL']._serialized_options = b'\210\240\037\000\230\240\037\000\312\264-\005PoolI'
+    _globals['_POOL']._serialized_start = 174
+    _globals['_POOL']._serialized_end = 958
 # @@protoc_insertion_point(module_scope)

@@ -6,17 +6,9 @@
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
-from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-_runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC,
-    5,
-    27,
-    1,
-    '',
-    'osmosis/concentratedliquidity/v1beta1/tx.proto'
-)
+
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -28,136 +20,230 @@ from amino import amino_pb2 as amino_dot_amino__pb2
 from cosmos.base.v1beta1 import coin_pb2 as cosmos_dot_base_dot_v1beta1_dot_coin__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.osmosis/concentratedliquidity/v1beta1/tx.proto\x12%osmosis.concentratedliquidity.v1beta1\x1a\x17\x63osmos/msg/v1/msg.proto\x1a\x14gogoproto/gogo.proto\x1a\x11\x61mino/amino.proto\x1a\x1e\x63osmos/base/v1beta1/coin.proto\"\xef\x03\n\x11MsgCreatePosition\x12#\n\x07pool_id\x18\x01 \x01(\x04\x42\x12\xf2\xde\x1f\x0eyaml:\"pool_id\"\x12!\n\x06sender\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"sender\"\x12)\n\nlower_tick\x18\x03 \x01(\x03\x42\x15\xf2\xde\x1f\x11yaml:\"lower_tick\"\x12)\n\nupper_tick\x18\x04 \x01(\x03\x42\x15\xf2\xde\x1f\x11yaml:\"upper_tick\"\x12\x64\n\x0ftokens_provided\x18\x05 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinB0\xc8\xde\x1f\x00\xaa\xdf\x1f(github.com/cosmos/cosmos-sdk/types.Coins\x12T\n\x11token_min_amount0\x18\x06 \x01(\tB9\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x18yaml:\"token_min_amount0\"\x12T\n\x11token_min_amount1\x18\x07 \x01(\tB9\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x18yaml:\"token_min_amount1\":*\x82\xe7\xb0*\x06sender\x8a\xe7\xb0*\x1aosmosis/cl-create-position\"\xfe\x02\n\x19MsgCreatePositionResponse\x12+\n\x0bposition_id\x18\x01 \x01(\x04\x42\x16\xf2\xde\x1f\x12yaml:\"position_id\"\x12@\n\x07\x61mount0\x18\x02 \x01(\tB/\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0eyaml:\"amount0\"\x12@\n\x07\x61mount1\x18\x03 \x01(\tB/\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0eyaml:\"amount1\"\x12Z\n\x11liquidity_created\x18\x05 \x01(\tB?\xc8\xde\x1f\x00\xda\xde\x1f\x1b\x63osmossdk.io/math.LegacyDec\xf2\xde\x1f\x18yaml:\"liquidity_created\"\x12)\n\nlower_tick\x18\x06 \x01(\x03\x42\x15\xf2\xde\x1f\x11yaml:\"lower_tick\"\x12)\n\nupper_tick\x18\x07 \x01(\x03\x42\x15\xf2\xde\x1f\x11yaml:\"upper_tick\"\"\xc0\x03\n\x10MsgAddToPosition\x12+\n\x0bposition_id\x18\x01 \x01(\x04\x42\x16\xf2\xde\x1f\x12yaml:\"position_id\"\x12!\n\x06sender\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"sender\"\x12\x41\n\x07\x61mount0\x18\x03 \x01(\tB0\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0fyaml:\"amount_0\"\x12\x41\n\x07\x61mount1\x18\x04 \x01(\tB0\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0fyaml:\"amount_1\"\x12T\n\x11token_min_amount0\x18\x05 \x01(\tB9\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x18yaml:\"token_min_amount0\"\x12T\n\x11token_min_amount1\x18\x06 \x01(\tB9\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x18yaml:\"token_min_amount1\":*\x82\xe7\xb0*\x06sender\x8a\xe7\xb0*\x1aosmosis/cl-add-to-position\"\xcb\x01\n\x18MsgAddToPositionResponse\x12+\n\x0bposition_id\x18\x01 \x01(\x04\x42\x16\xf2\xde\x1f\x12yaml:\"position_id\"\x12@\n\x07\x61mount0\x18\x02 \x01(\tB/\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0eyaml:\"amount0\"\x12@\n\x07\x61mount1\x18\x03 \x01(\tB/\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0eyaml:\"amount1\"\"\xed\x01\n\x13MsgWithdrawPosition\x12+\n\x0bposition_id\x18\x01 \x01(\x04\x42\x16\xf2\xde\x1f\x12yaml:\"position_id\"\x12!\n\x06sender\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"sender\"\x12X\n\x10liquidity_amount\x18\x03 \x01(\tB>\xc8\xde\x1f\x00\xda\xde\x1f\x1b\x63osmossdk.io/math.LegacyDec\xf2\xde\x1f\x17yaml:\"liquidity_amount\":,\x82\xe7\xb0*\x06sender\x8a\xe7\xb0*\x1cosmosis/cl-withdraw-position\"\xa1\x01\n\x1bMsgWithdrawPositionResponse\x12@\n\x07\x61mount0\x18\x01 \x01(\tB/\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0eyaml:\"amount0\"\x12@\n\x07\x61mount1\x18\x02 \x01(\tB/\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0eyaml:\"amount1\"\"\x96\x01\n\x17MsgCollectSpreadRewards\x12-\n\x0cposition_ids\x18\x01 \x03(\x04\x42\x17\xf2\xde\x1f\x13yaml:\"position_ids\"\x12!\n\x06sender\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"sender\":)\x82\xe7\xb0*\x06sender\x8a\xe7\xb0*\x19osmosis/cl-col-sp-rewards\"\xb4\x01\n\x1fMsgCollectSpreadRewardsResponse\x12\x90\x01\n\x18\x63ollected_spread_rewards\x18\x01 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinBS\xc8\xde\x1f\x00\xf2\xde\x1f\x1fyaml:\"collected_spread_rewards\"\xaa\xdf\x1f(github.com/cosmos/cosmos-sdk/types.Coins\"\x97\x01\n\x14MsgCollectIncentives\x12-\n\x0cposition_ids\x18\x01 \x03(\x04\x42\x17\xf2\xde\x1f\x13yaml:\"position_ids\"\x12!\n\x06sender\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"sender\":-\x82\xe7\xb0*\x06sender\x8a\xe7\xb0*\x1dosmosis/cl-collect-incentives\"\xb4\x02\n\x1cMsgCollectIncentivesResponse\x12\x88\x01\n\x14\x63ollected_incentives\x18\x01 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinBO\xc8\xde\x1f\x00\xf2\xde\x1f\x1byaml:\"collected_incentives\"\xaa\xdf\x1f(github.com/cosmos/cosmos-sdk/types.Coins\x12\x88\x01\n\x14\x66orfeited_incentives\x18\x02 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinBO\xc8\xde\x1f\x00\xf2\xde\x1f\x1byaml:\"forfeited_incentives\"\xaa\xdf\x1f(github.com/cosmos/cosmos-sdk/types.Coins\"\xa4\x01\n\x1aMsgFungifyChargedPositions\x12-\n\x0cposition_ids\x18\x01 \x03(\x04\x42\x17\xf2\xde\x1f\x13yaml:\"position_ids\"\x12!\n\x06sender\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"sender\":4\x82\xe7\xb0*\x06sender\x8a\xe7\xb0*$osmosis/cl-fungify-charged-positions\"Y\n\"MsgFungifyChargedPositionsResponse\x12\x33\n\x0fnew_position_id\x18\x01 \x01(\x04\x42\x1a\xf2\xde\x1f\x16yaml:\"new_position_id\"\"\xc0\x01\n\x14MsgTransferPositions\x12-\n\x0cposition_ids\x18\x01 \x03(\x04\x42\x17\xf2\xde\x1f\x13yaml:\"position_ids\"\x12!\n\x06sender\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"sender\"\x12\'\n\tnew_owner\x18\x03 \x01(\tB\x14\xf2\xde\x1f\x10yaml:\"new_owner\":-\x82\xe7\xb0*\x06sender\x8a\xe7\xb0*\x1dosmosis/cl-transfer-positions\"\x1e\n\x1cMsgTransferPositionsResponse2\x86\x07\n\x03Msg\x12\x8c\x01\n\x0e\x43reatePosition\x12\x38.osmosis.concentratedliquidity.v1beta1.MsgCreatePosition\x1a@.osmosis.concentratedliquidity.v1beta1.MsgCreatePositionResponse\x12\x92\x01\n\x10WithdrawPosition\x12:.osmosis.concentratedliquidity.v1beta1.MsgWithdrawPosition\x1a\x42.osmosis.concentratedliquidity.v1beta1.MsgWithdrawPositionResponse\x12\x89\x01\n\rAddToPosition\x12\x37.osmosis.concentratedliquidity.v1beta1.MsgAddToPosition\x1a?.osmosis.concentratedliquidity.v1beta1.MsgAddToPositionResponse\x12\x9e\x01\n\x14\x43ollectSpreadRewards\x12>.osmosis.concentratedliquidity.v1beta1.MsgCollectSpreadRewards\x1a\x46.osmosis.concentratedliquidity.v1beta1.MsgCollectSpreadRewardsResponse\x12\x95\x01\n\x11\x43ollectIncentives\x12;.osmosis.concentratedliquidity.v1beta1.MsgCollectIncentives\x1a\x43.osmosis.concentratedliquidity.v1beta1.MsgCollectIncentivesResponse\x12\x95\x01\n\x11TransferPositions\x12;.osmosis.concentratedliquidity.v1beta1.MsgTransferPositions\x1a\x43.osmosis.concentratedliquidity.v1beta1.MsgTransferPositionsResponseBDZBgithub.com/osmosis-labs/osmosis/v25/x/concentrated-liquidity/typesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
+    b'\n.osmosis/concentratedliquidity/v1beta1/tx.proto\x12%osmosis.concentratedliquidity.v1beta1\x1a\x17\x63osmos/msg/v1/msg.proto\x1a\x14gogoproto/gogo.proto\x1a\x11\x61mino/amino.proto\x1a\x1e\x63osmos/base/v1beta1/coin.proto\"\xef\x03\n\x11MsgCreatePosition\x12#\n\x07pool_id\x18\x01 \x01(\x04\x42\x12\xf2\xde\x1f\x0eyaml:\"pool_id\"\x12!\n\x06sender\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"sender\"\x12)\n\nlower_tick\x18\x03 \x01(\x03\x42\x15\xf2\xde\x1f\x11yaml:\"lower_tick\"\x12)\n\nupper_tick\x18\x04 \x01(\x03\x42\x15\xf2\xde\x1f\x11yaml:\"upper_tick\"\x12\x64\n\x0ftokens_provided\x18\x05 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinB0\xc8\xde\x1f\x00\xaa\xdf\x1f(github.com/cosmos/cosmos-sdk/types.Coins\x12T\n\x11token_min_amount0\x18\x06 \x01(\tB9\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x18yaml:\"token_min_amount0\"\x12T\n\x11token_min_amount1\x18\x07 \x01(\tB9\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x18yaml:\"token_min_amount1\":*\x82\xe7\xb0*\x06sender\x8a\xe7\xb0*\x1aosmosis/cl-create-position\"\xfe\x02\n\x19MsgCreatePositionResponse\x12+\n\x0bposition_id\x18\x01 \x01(\x04\x42\x16\xf2\xde\x1f\x12yaml:\"position_id\"\x12@\n\x07\x61mount0\x18\x02 \x01(\tB/\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0eyaml:\"amount0\"\x12@\n\x07\x61mount1\x18\x03 \x01(\tB/\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0eyaml:\"amount1\"\x12Z\n\x11liquidity_created\x18\x05 \x01(\tB?\xc8\xde\x1f\x00\xda\xde\x1f\x1b\x63osmossdk.io/math.LegacyDec\xf2\xde\x1f\x18yaml:\"liquidity_created\"\x12)\n\nlower_tick\x18\x06 \x01(\x03\x42\x15\xf2\xde\x1f\x11yaml:\"lower_tick\"\x12)\n\nupper_tick\x18\x07 \x01(\x03\x42\x15\xf2\xde\x1f\x11yaml:\"upper_tick\"\"\xc0\x03\n\x10MsgAddToPosition\x12+\n\x0bposition_id\x18\x01 \x01(\x04\x42\x16\xf2\xde\x1f\x12yaml:\"position_id\"\x12!\n\x06sender\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"sender\"\x12\x41\n\x07\x61mount0\x18\x03 \x01(\tB0\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0fyaml:\"amount_0\"\x12\x41\n\x07\x61mount1\x18\x04 \x01(\tB0\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0fyaml:\"amount_1\"\x12T\n\x11token_min_amount0\x18\x05 \x01(\tB9\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x18yaml:\"token_min_amount0\"\x12T\n\x11token_min_amount1\x18\x06 \x01(\tB9\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x18yaml:\"token_min_amount1\":*\x82\xe7\xb0*\x06sender\x8a\xe7\xb0*\x1aosmosis/cl-add-to-position\"\xcb\x01\n\x18MsgAddToPositionResponse\x12+\n\x0bposition_id\x18\x01 \x01(\x04\x42\x16\xf2\xde\x1f\x12yaml:\"position_id\"\x12@\n\x07\x61mount0\x18\x02 \x01(\tB/\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0eyaml:\"amount0\"\x12@\n\x07\x61mount1\x18\x03 \x01(\tB/\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0eyaml:\"amount1\"\"\xed\x01\n\x13MsgWithdrawPosition\x12+\n\x0bposition_id\x18\x01 \x01(\x04\x42\x16\xf2\xde\x1f\x12yaml:\"position_id\"\x12!\n\x06sender\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"sender\"\x12X\n\x10liquidity_amount\x18\x03 \x01(\tB>\xc8\xde\x1f\x00\xda\xde\x1f\x1b\x63osmossdk.io/math.LegacyDec\xf2\xde\x1f\x17yaml:\"liquidity_amount\":,\x82\xe7\xb0*\x06sender\x8a\xe7\xb0*\x1cosmosis/cl-withdraw-position\"\xa1\x01\n\x1bMsgWithdrawPositionResponse\x12@\n\x07\x61mount0\x18\x01 \x01(\tB/\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0eyaml:\"amount0\"\x12@\n\x07\x61mount1\x18\x02 \x01(\tB/\xc8\xde\x1f\x00\xda\xde\x1f\x15\x63osmossdk.io/math.Int\xf2\xde\x1f\x0eyaml:\"amount1\"\"\x96\x01\n\x17MsgCollectSpreadRewards\x12-\n\x0cposition_ids\x18\x01 \x03(\x04\x42\x17\xf2\xde\x1f\x13yaml:\"position_ids\"\x12!\n\x06sender\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"sender\":)\x82\xe7\xb0*\x06sender\x8a\xe7\xb0*\x19osmosis/cl-col-sp-rewards\"\xb4\x01\n\x1fMsgCollectSpreadRewardsResponse\x12\x90\x01\n\x18\x63ollected_spread_rewards\x18\x01 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinBS\xc8\xde\x1f\x00\xf2\xde\x1f\x1fyaml:\"collected_spread_rewards\"\xaa\xdf\x1f(github.com/cosmos/cosmos-sdk/types.Coins\"\x97\x01\n\x14MsgCollectIncentives\x12-\n\x0cposition_ids\x18\x01 \x03(\x04\x42\x17\xf2\xde\x1f\x13yaml:\"position_ids\"\x12!\n\x06sender\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"sender\":-\x82\xe7\xb0*\x06sender\x8a\xe7\xb0*\x1dosmosis/cl-collect-incentives\"\xb4\x02\n\x1cMsgCollectIncentivesResponse\x12\x88\x01\n\x14\x63ollected_incentives\x18\x01 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinBO\xc8\xde\x1f\x00\xf2\xde\x1f\x1byaml:\"collected_incentives\"\xaa\xdf\x1f(github.com/cosmos/cosmos-sdk/types.Coins\x12\x88\x01\n\x14\x66orfeited_incentives\x18\x02 \x03(\x0b\x32\x19.cosmos.base.v1beta1.CoinBO\xc8\xde\x1f\x00\xf2\xde\x1f\x1byaml:\"forfeited_incentives\"\xaa\xdf\x1f(github.com/cosmos/cosmos-sdk/types.Coins\"\xa4\x01\n\x1aMsgFungifyChargedPositions\x12-\n\x0cposition_ids\x18\x01 \x03(\x04\x42\x17\xf2\xde\x1f\x13yaml:\"position_ids\"\x12!\n\x06sender\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"sender\":4\x82\xe7\xb0*\x06sender\x8a\xe7\xb0*$osmosis/cl-fungify-charged-positions\"Y\n\"MsgFungifyChargedPositionsResponse\x12\x33\n\x0fnew_position_id\x18\x01 \x01(\x04\x42\x1a\xf2\xde\x1f\x16yaml:\"new_position_id\"\"\xc0\x01\n\x14MsgTransferPositions\x12-\n\x0cposition_ids\x18\x01 \x03(\x04\x42\x17\xf2\xde\x1f\x13yaml:\"position_ids\"\x12!\n\x06sender\x18\x02 \x01(\tB\x11\xf2\xde\x1f\ryaml:\"sender\"\x12\'\n\tnew_owner\x18\x03 \x01(\tB\x14\xf2\xde\x1f\x10yaml:\"new_owner\":-\x82\xe7\xb0*\x06sender\x8a\xe7\xb0*\x1dosmosis/cl-transfer-positions\"\x1e\n\x1cMsgTransferPositionsResponse2\x86\x07\n\x03Msg\x12\x8c\x01\n\x0e\x43reatePosition\x12\x38.osmosis.concentratedliquidity.v1beta1.MsgCreatePosition\x1a@.osmosis.concentratedliquidity.v1beta1.MsgCreatePositionResponse\x12\x92\x01\n\x10WithdrawPosition\x12:.osmosis.concentratedliquidity.v1beta1.MsgWithdrawPosition\x1a\x42.osmosis.concentratedliquidity.v1beta1.MsgWithdrawPositionResponse\x12\x89\x01\n\rAddToPosition\x12\x37.osmosis.concentratedliquidity.v1beta1.MsgAddToPosition\x1a?.osmosis.concentratedliquidity.v1beta1.MsgAddToPositionResponse\x12\x9e\x01\n\x14\x43ollectSpreadRewards\x12>.osmosis.concentratedliquidity.v1beta1.MsgCollectSpreadRewards\x1a\x46.osmosis.concentratedliquidity.v1beta1.MsgCollectSpreadRewardsResponse\x12\x95\x01\n\x11\x43ollectIncentives\x12;.osmosis.concentratedliquidity.v1beta1.MsgCollectIncentives\x1a\x43.osmosis.concentratedliquidity.v1beta1.MsgCollectIncentivesResponse\x12\x95\x01\n\x11TransferPositions\x12;.osmosis.concentratedliquidity.v1beta1.MsgTransferPositions\x1a\x43.osmosis.concentratedliquidity.v1beta1.MsgTransferPositionsResponseBDZBgithub.com/osmosis-labs/osmosis/v25/x/concentrated-liquidity/typesb\x06proto3'
+)
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'osmosis.concentratedliquidity.v1beta1.tx_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-  _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'ZBgithub.com/osmosis-labs/osmosis/v25/x/concentrated-liquidity/types'
-  _globals['_MSGCREATEPOSITION'].fields_by_name['pool_id']._loaded_options = None
-  _globals['_MSGCREATEPOSITION'].fields_by_name['pool_id']._serialized_options = b'\362\336\037\016yaml:\"pool_id\"'
-  _globals['_MSGCREATEPOSITION'].fields_by_name['sender']._loaded_options = None
-  _globals['_MSGCREATEPOSITION'].fields_by_name['sender']._serialized_options = b'\362\336\037\ryaml:\"sender\"'
-  _globals['_MSGCREATEPOSITION'].fields_by_name['lower_tick']._loaded_options = None
-  _globals['_MSGCREATEPOSITION'].fields_by_name['lower_tick']._serialized_options = b'\362\336\037\021yaml:\"lower_tick\"'
-  _globals['_MSGCREATEPOSITION'].fields_by_name['upper_tick']._loaded_options = None
-  _globals['_MSGCREATEPOSITION'].fields_by_name['upper_tick']._serialized_options = b'\362\336\037\021yaml:\"upper_tick\"'
-  _globals['_MSGCREATEPOSITION'].fields_by_name['tokens_provided']._loaded_options = None
-  _globals['_MSGCREATEPOSITION'].fields_by_name['tokens_provided']._serialized_options = b'\310\336\037\000\252\337\037(github.com/cosmos/cosmos-sdk/types.Coins'
-  _globals['_MSGCREATEPOSITION'].fields_by_name['token_min_amount0']._loaded_options = None
-  _globals['_MSGCREATEPOSITION'].fields_by_name['token_min_amount0']._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\030yaml:\"token_min_amount0\"'
-  _globals['_MSGCREATEPOSITION'].fields_by_name['token_min_amount1']._loaded_options = None
-  _globals['_MSGCREATEPOSITION'].fields_by_name['token_min_amount1']._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\030yaml:\"token_min_amount1\"'
-  _globals['_MSGCREATEPOSITION']._loaded_options = None
-  _globals['_MSGCREATEPOSITION']._serialized_options = b'\202\347\260*\006sender\212\347\260*\032osmosis/cl-create-position'
-  _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['position_id']._loaded_options = None
-  _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['position_id']._serialized_options = b'\362\336\037\022yaml:\"position_id\"'
-  _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['amount0']._loaded_options = None
-  _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['amount0']._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\016yaml:\"amount0\"'
-  _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['amount1']._loaded_options = None
-  _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['amount1']._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\016yaml:\"amount1\"'
-  _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['liquidity_created']._loaded_options = None
-  _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['liquidity_created']._serialized_options = b'\310\336\037\000\332\336\037\033cosmossdk.io/math.LegacyDec\362\336\037\030yaml:\"liquidity_created\"'
-  _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['lower_tick']._loaded_options = None
-  _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['lower_tick']._serialized_options = b'\362\336\037\021yaml:\"lower_tick\"'
-  _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['upper_tick']._loaded_options = None
-  _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['upper_tick']._serialized_options = b'\362\336\037\021yaml:\"upper_tick\"'
-  _globals['_MSGADDTOPOSITION'].fields_by_name['position_id']._loaded_options = None
-  _globals['_MSGADDTOPOSITION'].fields_by_name['position_id']._serialized_options = b'\362\336\037\022yaml:\"position_id\"'
-  _globals['_MSGADDTOPOSITION'].fields_by_name['sender']._loaded_options = None
-  _globals['_MSGADDTOPOSITION'].fields_by_name['sender']._serialized_options = b'\362\336\037\ryaml:\"sender\"'
-  _globals['_MSGADDTOPOSITION'].fields_by_name['amount0']._loaded_options = None
-  _globals['_MSGADDTOPOSITION'].fields_by_name['amount0']._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\017yaml:\"amount_0\"'
-  _globals['_MSGADDTOPOSITION'].fields_by_name['amount1']._loaded_options = None
-  _globals['_MSGADDTOPOSITION'].fields_by_name['amount1']._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\017yaml:\"amount_1\"'
-  _globals['_MSGADDTOPOSITION'].fields_by_name['token_min_amount0']._loaded_options = None
-  _globals['_MSGADDTOPOSITION'].fields_by_name['token_min_amount0']._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\030yaml:\"token_min_amount0\"'
-  _globals['_MSGADDTOPOSITION'].fields_by_name['token_min_amount1']._loaded_options = None
-  _globals['_MSGADDTOPOSITION'].fields_by_name['token_min_amount1']._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\030yaml:\"token_min_amount1\"'
-  _globals['_MSGADDTOPOSITION']._loaded_options = None
-  _globals['_MSGADDTOPOSITION']._serialized_options = b'\202\347\260*\006sender\212\347\260*\032osmosis/cl-add-to-position'
-  _globals['_MSGADDTOPOSITIONRESPONSE'].fields_by_name['position_id']._loaded_options = None
-  _globals['_MSGADDTOPOSITIONRESPONSE'].fields_by_name['position_id']._serialized_options = b'\362\336\037\022yaml:\"position_id\"'
-  _globals['_MSGADDTOPOSITIONRESPONSE'].fields_by_name['amount0']._loaded_options = None
-  _globals['_MSGADDTOPOSITIONRESPONSE'].fields_by_name['amount0']._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\016yaml:\"amount0\"'
-  _globals['_MSGADDTOPOSITIONRESPONSE'].fields_by_name['amount1']._loaded_options = None
-  _globals['_MSGADDTOPOSITIONRESPONSE'].fields_by_name['amount1']._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\016yaml:\"amount1\"'
-  _globals['_MSGWITHDRAWPOSITION'].fields_by_name['position_id']._loaded_options = None
-  _globals['_MSGWITHDRAWPOSITION'].fields_by_name['position_id']._serialized_options = b'\362\336\037\022yaml:\"position_id\"'
-  _globals['_MSGWITHDRAWPOSITION'].fields_by_name['sender']._loaded_options = None
-  _globals['_MSGWITHDRAWPOSITION'].fields_by_name['sender']._serialized_options = b'\362\336\037\ryaml:\"sender\"'
-  _globals['_MSGWITHDRAWPOSITION'].fields_by_name['liquidity_amount']._loaded_options = None
-  _globals['_MSGWITHDRAWPOSITION'].fields_by_name['liquidity_amount']._serialized_options = b'\310\336\037\000\332\336\037\033cosmossdk.io/math.LegacyDec\362\336\037\027yaml:\"liquidity_amount\"'
-  _globals['_MSGWITHDRAWPOSITION']._loaded_options = None
-  _globals['_MSGWITHDRAWPOSITION']._serialized_options = b'\202\347\260*\006sender\212\347\260*\034osmosis/cl-withdraw-position'
-  _globals['_MSGWITHDRAWPOSITIONRESPONSE'].fields_by_name['amount0']._loaded_options = None
-  _globals['_MSGWITHDRAWPOSITIONRESPONSE'].fields_by_name['amount0']._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\016yaml:\"amount0\"'
-  _globals['_MSGWITHDRAWPOSITIONRESPONSE'].fields_by_name['amount1']._loaded_options = None
-  _globals['_MSGWITHDRAWPOSITIONRESPONSE'].fields_by_name['amount1']._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\016yaml:\"amount1\"'
-  _globals['_MSGCOLLECTSPREADREWARDS'].fields_by_name['position_ids']._loaded_options = None
-  _globals['_MSGCOLLECTSPREADREWARDS'].fields_by_name['position_ids']._serialized_options = b'\362\336\037\023yaml:\"position_ids\"'
-  _globals['_MSGCOLLECTSPREADREWARDS'].fields_by_name['sender']._loaded_options = None
-  _globals['_MSGCOLLECTSPREADREWARDS'].fields_by_name['sender']._serialized_options = b'\362\336\037\ryaml:\"sender\"'
-  _globals['_MSGCOLLECTSPREADREWARDS']._loaded_options = None
-  _globals['_MSGCOLLECTSPREADREWARDS']._serialized_options = b'\202\347\260*\006sender\212\347\260*\031osmosis/cl-col-sp-rewards'
-  _globals['_MSGCOLLECTSPREADREWARDSRESPONSE'].fields_by_name['collected_spread_rewards']._loaded_options = None
-  _globals['_MSGCOLLECTSPREADREWARDSRESPONSE'].fields_by_name['collected_spread_rewards']._serialized_options = b'\310\336\037\000\362\336\037\037yaml:\"collected_spread_rewards\"\252\337\037(github.com/cosmos/cosmos-sdk/types.Coins'
-  _globals['_MSGCOLLECTINCENTIVES'].fields_by_name['position_ids']._loaded_options = None
-  _globals['_MSGCOLLECTINCENTIVES'].fields_by_name['position_ids']._serialized_options = b'\362\336\037\023yaml:\"position_ids\"'
-  _globals['_MSGCOLLECTINCENTIVES'].fields_by_name['sender']._loaded_options = None
-  _globals['_MSGCOLLECTINCENTIVES'].fields_by_name['sender']._serialized_options = b'\362\336\037\ryaml:\"sender\"'
-  _globals['_MSGCOLLECTINCENTIVES']._loaded_options = None
-  _globals['_MSGCOLLECTINCENTIVES']._serialized_options = b'\202\347\260*\006sender\212\347\260*\035osmosis/cl-collect-incentives'
-  _globals['_MSGCOLLECTINCENTIVESRESPONSE'].fields_by_name['collected_incentives']._loaded_options = None
-  _globals['_MSGCOLLECTINCENTIVESRESPONSE'].fields_by_name['collected_incentives']._serialized_options = b'\310\336\037\000\362\336\037\033yaml:\"collected_incentives\"\252\337\037(github.com/cosmos/cosmos-sdk/types.Coins'
-  _globals['_MSGCOLLECTINCENTIVESRESPONSE'].fields_by_name['forfeited_incentives']._loaded_options = None
-  _globals['_MSGCOLLECTINCENTIVESRESPONSE'].fields_by_name['forfeited_incentives']._serialized_options = b'\310\336\037\000\362\336\037\033yaml:\"forfeited_incentives\"\252\337\037(github.com/cosmos/cosmos-sdk/types.Coins'
-  _globals['_MSGFUNGIFYCHARGEDPOSITIONS'].fields_by_name['position_ids']._loaded_options = None
-  _globals['_MSGFUNGIFYCHARGEDPOSITIONS'].fields_by_name['position_ids']._serialized_options = b'\362\336\037\023yaml:\"position_ids\"'
-  _globals['_MSGFUNGIFYCHARGEDPOSITIONS'].fields_by_name['sender']._loaded_options = None
-  _globals['_MSGFUNGIFYCHARGEDPOSITIONS'].fields_by_name['sender']._serialized_options = b'\362\336\037\ryaml:\"sender\"'
-  _globals['_MSGFUNGIFYCHARGEDPOSITIONS']._loaded_options = None
-  _globals['_MSGFUNGIFYCHARGEDPOSITIONS']._serialized_options = b'\202\347\260*\006sender\212\347\260*$osmosis/cl-fungify-charged-positions'
-  _globals['_MSGFUNGIFYCHARGEDPOSITIONSRESPONSE'].fields_by_name['new_position_id']._loaded_options = None
-  _globals['_MSGFUNGIFYCHARGEDPOSITIONSRESPONSE'].fields_by_name['new_position_id']._serialized_options = b'\362\336\037\026yaml:\"new_position_id\"'
-  _globals['_MSGTRANSFERPOSITIONS'].fields_by_name['position_ids']._loaded_options = None
-  _globals['_MSGTRANSFERPOSITIONS'].fields_by_name['position_ids']._serialized_options = b'\362\336\037\023yaml:\"position_ids\"'
-  _globals['_MSGTRANSFERPOSITIONS'].fields_by_name['sender']._loaded_options = None
-  _globals['_MSGTRANSFERPOSITIONS'].fields_by_name['sender']._serialized_options = b'\362\336\037\ryaml:\"sender\"'
-  _globals['_MSGTRANSFERPOSITIONS'].fields_by_name['new_owner']._loaded_options = None
-  _globals['_MSGTRANSFERPOSITIONS'].fields_by_name['new_owner']._serialized_options = b'\362\336\037\020yaml:\"new_owner\"'
-  _globals['_MSGTRANSFERPOSITIONS']._loaded_options = None
-  _globals['_MSGTRANSFERPOSITIONS']._serialized_options = b'\202\347\260*\006sender\212\347\260*\035osmosis/cl-transfer-positions'
-  _globals['_MSGCREATEPOSITION']._serialized_start=188
-  _globals['_MSGCREATEPOSITION']._serialized_end=683
-  _globals['_MSGCREATEPOSITIONRESPONSE']._serialized_start=686
-  _globals['_MSGCREATEPOSITIONRESPONSE']._serialized_end=1068
-  _globals['_MSGADDTOPOSITION']._serialized_start=1071
-  _globals['_MSGADDTOPOSITION']._serialized_end=1519
-  _globals['_MSGADDTOPOSITIONRESPONSE']._serialized_start=1522
-  _globals['_MSGADDTOPOSITIONRESPONSE']._serialized_end=1725
-  _globals['_MSGWITHDRAWPOSITION']._serialized_start=1728
-  _globals['_MSGWITHDRAWPOSITION']._serialized_end=1965
-  _globals['_MSGWITHDRAWPOSITIONRESPONSE']._serialized_start=1968
-  _globals['_MSGWITHDRAWPOSITIONRESPONSE']._serialized_end=2129
-  _globals['_MSGCOLLECTSPREADREWARDS']._serialized_start=2132
-  _globals['_MSGCOLLECTSPREADREWARDS']._serialized_end=2282
-  _globals['_MSGCOLLECTSPREADREWARDSRESPONSE']._serialized_start=2285
-  _globals['_MSGCOLLECTSPREADREWARDSRESPONSE']._serialized_end=2465
-  _globals['_MSGCOLLECTINCENTIVES']._serialized_start=2468
-  _globals['_MSGCOLLECTINCENTIVES']._serialized_end=2619
-  _globals['_MSGCOLLECTINCENTIVESRESPONSE']._serialized_start=2622
-  _globals['_MSGCOLLECTINCENTIVESRESPONSE']._serialized_end=2930
-  _globals['_MSGFUNGIFYCHARGEDPOSITIONS']._serialized_start=2933
-  _globals['_MSGFUNGIFYCHARGEDPOSITIONS']._serialized_end=3097
-  _globals['_MSGFUNGIFYCHARGEDPOSITIONSRESPONSE']._serialized_start=3099
-  _globals['_MSGFUNGIFYCHARGEDPOSITIONSRESPONSE']._serialized_end=3188
-  _globals['_MSGTRANSFERPOSITIONS']._serialized_start=3191
-  _globals['_MSGTRANSFERPOSITIONS']._serialized_end=3383
-  _globals['_MSGTRANSFERPOSITIONSRESPONSE']._serialized_start=3385
-  _globals['_MSGTRANSFERPOSITIONSRESPONSE']._serialized_end=3415
-  _globals['_MSG']._serialized_start=3418
-  _globals['_MSG']._serialized_end=4320
+    _globals['DESCRIPTOR']._loaded_options = None
+    _globals['DESCRIPTOR']._serialized_options = b'ZBgithub.com/osmosis-labs/osmosis/v25/x/concentrated-liquidity/types'
+    _globals['_MSGCREATEPOSITION'].fields_by_name['pool_id']._loaded_options = None
+    _globals['_MSGCREATEPOSITION'].fields_by_name['pool_id']._serialized_options = b'\362\336\037\016yaml:\"pool_id\"'
+    _globals['_MSGCREATEPOSITION'].fields_by_name['sender']._loaded_options = None
+    _globals['_MSGCREATEPOSITION'].fields_by_name['sender']._serialized_options = b'\362\336\037\ryaml:\"sender\"'
+    _globals['_MSGCREATEPOSITION'].fields_by_name['lower_tick']._loaded_options = None
+    _globals['_MSGCREATEPOSITION'].fields_by_name[
+        'lower_tick'
+    ]._serialized_options = b'\362\336\037\021yaml:\"lower_tick\"'
+    _globals['_MSGCREATEPOSITION'].fields_by_name['upper_tick']._loaded_options = None
+    _globals['_MSGCREATEPOSITION'].fields_by_name[
+        'upper_tick'
+    ]._serialized_options = b'\362\336\037\021yaml:\"upper_tick\"'
+    _globals['_MSGCREATEPOSITION'].fields_by_name['tokens_provided']._loaded_options = None
+    _globals['_MSGCREATEPOSITION'].fields_by_name[
+        'tokens_provided'
+    ]._serialized_options = b'\310\336\037\000\252\337\037(github.com/cosmos/cosmos-sdk/types.Coins'
+    _globals['_MSGCREATEPOSITION'].fields_by_name['token_min_amount0']._loaded_options = None
+    _globals['_MSGCREATEPOSITION'].fields_by_name[
+        'token_min_amount0'
+    ]._serialized_options = (
+        b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\030yaml:\"token_min_amount0\"'
+    )
+    _globals['_MSGCREATEPOSITION'].fields_by_name['token_min_amount1']._loaded_options = None
+    _globals['_MSGCREATEPOSITION'].fields_by_name[
+        'token_min_amount1'
+    ]._serialized_options = (
+        b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\030yaml:\"token_min_amount1\"'
+    )
+    _globals['_MSGCREATEPOSITION']._loaded_options = None
+    _globals['_MSGCREATEPOSITION']._serialized_options = (
+        b'\202\347\260*\006sender\212\347\260*\032osmosis/cl-create-position'
+    )
+    _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['position_id']._loaded_options = None
+    _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name[
+        'position_id'
+    ]._serialized_options = b'\362\336\037\022yaml:\"position_id\"'
+    _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['amount0']._loaded_options = None
+    _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name[
+        'amount0'
+    ]._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\016yaml:\"amount0\"'
+    _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['amount1']._loaded_options = None
+    _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name[
+        'amount1'
+    ]._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\016yaml:\"amount1\"'
+    _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['liquidity_created']._loaded_options = None
+    _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name[
+        'liquidity_created'
+    ]._serialized_options = (
+        b'\310\336\037\000\332\336\037\033cosmossdk.io/math.LegacyDec\362\336\037\030yaml:\"liquidity_created\"'
+    )
+    _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['lower_tick']._loaded_options = None
+    _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name[
+        'lower_tick'
+    ]._serialized_options = b'\362\336\037\021yaml:\"lower_tick\"'
+    _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name['upper_tick']._loaded_options = None
+    _globals['_MSGCREATEPOSITIONRESPONSE'].fields_by_name[
+        'upper_tick'
+    ]._serialized_options = b'\362\336\037\021yaml:\"upper_tick\"'
+    _globals['_MSGADDTOPOSITION'].fields_by_name['position_id']._loaded_options = None
+    _globals['_MSGADDTOPOSITION'].fields_by_name[
+        'position_id'
+    ]._serialized_options = b'\362\336\037\022yaml:\"position_id\"'
+    _globals['_MSGADDTOPOSITION'].fields_by_name['sender']._loaded_options = None
+    _globals['_MSGADDTOPOSITION'].fields_by_name['sender']._serialized_options = b'\362\336\037\ryaml:\"sender\"'
+    _globals['_MSGADDTOPOSITION'].fields_by_name['amount0']._loaded_options = None
+    _globals['_MSGADDTOPOSITION'].fields_by_name[
+        'amount0'
+    ]._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\017yaml:\"amount_0\"'
+    _globals['_MSGADDTOPOSITION'].fields_by_name['amount1']._loaded_options = None
+    _globals['_MSGADDTOPOSITION'].fields_by_name[
+        'amount1'
+    ]._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\017yaml:\"amount_1\"'
+    _globals['_MSGADDTOPOSITION'].fields_by_name['token_min_amount0']._loaded_options = None
+    _globals['_MSGADDTOPOSITION'].fields_by_name[
+        'token_min_amount0'
+    ]._serialized_options = (
+        b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\030yaml:\"token_min_amount0\"'
+    )
+    _globals['_MSGADDTOPOSITION'].fields_by_name['token_min_amount1']._loaded_options = None
+    _globals['_MSGADDTOPOSITION'].fields_by_name[
+        'token_min_amount1'
+    ]._serialized_options = (
+        b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\030yaml:\"token_min_amount1\"'
+    )
+    _globals['_MSGADDTOPOSITION']._loaded_options = None
+    _globals['_MSGADDTOPOSITION']._serialized_options = (
+        b'\202\347\260*\006sender\212\347\260*\032osmosis/cl-add-to-position'
+    )
+    _globals['_MSGADDTOPOSITIONRESPONSE'].fields_by_name['position_id']._loaded_options = None
+    _globals['_MSGADDTOPOSITIONRESPONSE'].fields_by_name[
+        'position_id'
+    ]._serialized_options = b'\362\336\037\022yaml:\"position_id\"'
+    _globals['_MSGADDTOPOSITIONRESPONSE'].fields_by_name['amount0']._loaded_options = None
+    _globals['_MSGADDTOPOSITIONRESPONSE'].fields_by_name[
+        'amount0'
+    ]._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\016yaml:\"amount0\"'
+    _globals['_MSGADDTOPOSITIONRESPONSE'].fields_by_name['amount1']._loaded_options = None
+    _globals['_MSGADDTOPOSITIONRESPONSE'].fields_by_name[
+        'amount1'
+    ]._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\016yaml:\"amount1\"'
+    _globals['_MSGWITHDRAWPOSITION'].fields_by_name['position_id']._loaded_options = None
+    _globals['_MSGWITHDRAWPOSITION'].fields_by_name[
+        'position_id'
+    ]._serialized_options = b'\362\336\037\022yaml:\"position_id\"'
+    _globals['_MSGWITHDRAWPOSITION'].fields_by_name['sender']._loaded_options = None
+    _globals['_MSGWITHDRAWPOSITION'].fields_by_name['sender']._serialized_options = b'\362\336\037\ryaml:\"sender\"'
+    _globals['_MSGWITHDRAWPOSITION'].fields_by_name['liquidity_amount']._loaded_options = None
+    _globals['_MSGWITHDRAWPOSITION'].fields_by_name[
+        'liquidity_amount'
+    ]._serialized_options = (
+        b'\310\336\037\000\332\336\037\033cosmossdk.io/math.LegacyDec\362\336\037\027yaml:\"liquidity_amount\"'
+    )
+    _globals['_MSGWITHDRAWPOSITION']._loaded_options = None
+    _globals['_MSGWITHDRAWPOSITION']._serialized_options = (
+        b'\202\347\260*\006sender\212\347\260*\034osmosis/cl-withdraw-position'
+    )
+    _globals['_MSGWITHDRAWPOSITIONRESPONSE'].fields_by_name['amount0']._loaded_options = None
+    _globals['_MSGWITHDRAWPOSITIONRESPONSE'].fields_by_name[
+        'amount0'
+    ]._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\016yaml:\"amount0\"'
+    _globals['_MSGWITHDRAWPOSITIONRESPONSE'].fields_by_name['amount1']._loaded_options = None
+    _globals['_MSGWITHDRAWPOSITIONRESPONSE'].fields_by_name[
+        'amount1'
+    ]._serialized_options = b'\310\336\037\000\332\336\037\025cosmossdk.io/math.Int\362\336\037\016yaml:\"amount1\"'
+    _globals['_MSGCOLLECTSPREADREWARDS'].fields_by_name['position_ids']._loaded_options = None
+    _globals['_MSGCOLLECTSPREADREWARDS'].fields_by_name[
+        'position_ids'
+    ]._serialized_options = b'\362\336\037\023yaml:\"position_ids\"'
+    _globals['_MSGCOLLECTSPREADREWARDS'].fields_by_name['sender']._loaded_options = None
+    _globals['_MSGCOLLECTSPREADREWARDS'].fields_by_name['sender']._serialized_options = b'\362\336\037\ryaml:\"sender\"'
+    _globals['_MSGCOLLECTSPREADREWARDS']._loaded_options = None
+    _globals['_MSGCOLLECTSPREADREWARDS']._serialized_options = (
+        b'\202\347\260*\006sender\212\347\260*\031osmosis/cl-col-sp-rewards'
+    )
+    _globals['_MSGCOLLECTSPREADREWARDSRESPONSE'].fields_by_name['collected_spread_rewards']._loaded_options = None
+    _globals['_MSGCOLLECTSPREADREWARDSRESPONSE'].fields_by_name[
+        'collected_spread_rewards'
+    ]._serialized_options = b'\310\336\037\000\362\336\037\037yaml:\"collected_spread_rewards\"\252\337\037(github.com/cosmos/cosmos-sdk/types.Coins'
+    _globals['_MSGCOLLECTINCENTIVES'].fields_by_name['position_ids']._loaded_options = None
+    _globals['_MSGCOLLECTINCENTIVES'].fields_by_name[
+        'position_ids'
+    ]._serialized_options = b'\362\336\037\023yaml:\"position_ids\"'
+    _globals['_MSGCOLLECTINCENTIVES'].fields_by_name['sender']._loaded_options = None
+    _globals['_MSGCOLLECTINCENTIVES'].fields_by_name['sender']._serialized_options = b'\362\336\037\ryaml:\"sender\"'
+    _globals['_MSGCOLLECTINCENTIVES']._loaded_options = None
+    _globals['_MSGCOLLECTINCENTIVES']._serialized_options = (
+        b'\202\347\260*\006sender\212\347\260*\035osmosis/cl-collect-incentives'
+    )
+    _globals['_MSGCOLLECTINCENTIVESRESPONSE'].fields_by_name['collected_incentives']._loaded_options = None
+    _globals['_MSGCOLLECTINCENTIVESRESPONSE'].fields_by_name[
+        'collected_incentives'
+    ]._serialized_options = b'\310\336\037\000\362\336\037\033yaml:\"collected_incentives\"\252\337\037(github.com/cosmos/cosmos-sdk/types.Coins'
+    _globals['_MSGCOLLECTINCENTIVESRESPONSE'].fields_by_name['forfeited_incentives']._loaded_options = None
+    _globals['_MSGCOLLECTINCENTIVESRESPONSE'].fields_by_name[
+        'forfeited_incentives'
+    ]._serialized_options = b'\310\336\037\000\362\336\037\033yaml:\"forfeited_incentives\"\252\337\037(github.com/cosmos/cosmos-sdk/types.Coins'
+    _globals['_MSGFUNGIFYCHARGEDPOSITIONS'].fields_by_name['position_ids']._loaded_options = None
+    _globals['_MSGFUNGIFYCHARGEDPOSITIONS'].fields_by_name[
+        'position_ids'
+    ]._serialized_options = b'\362\336\037\023yaml:\"position_ids\"'
+    _globals['_MSGFUNGIFYCHARGEDPOSITIONS'].fields_by_name['sender']._loaded_options = None
+    _globals['_MSGFUNGIFYCHARGEDPOSITIONS'].fields_by_name[
+        'sender'
+    ]._serialized_options = b'\362\336\037\ryaml:\"sender\"'
+    _globals['_MSGFUNGIFYCHARGEDPOSITIONS']._loaded_options = None
+    _globals['_MSGFUNGIFYCHARGEDPOSITIONS']._serialized_options = (
+        b'\202\347\260*\006sender\212\347\260*$osmosis/cl-fungify-charged-positions'
+    )
+    _globals['_MSGFUNGIFYCHARGEDPOSITIONSRESPONSE'].fields_by_name['new_position_id']._loaded_options = None
+    _globals['_MSGFUNGIFYCHARGEDPOSITIONSRESPONSE'].fields_by_name[
+        'new_position_id'
+    ]._serialized_options = b'\362\336\037\026yaml:\"new_position_id\"'
+    _globals['_MSGTRANSFERPOSITIONS'].fields_by_name['position_ids']._loaded_options = None
+    _globals['_MSGTRANSFERPOSITIONS'].fields_by_name[
+        'position_ids'
+    ]._serialized_options = b'\362\336\037\023yaml:\"position_ids\"'
+    _globals['_MSGTRANSFERPOSITIONS'].fields_by_name['sender']._loaded_options = None
+    _globals['_MSGTRANSFERPOSITIONS'].fields_by_name['sender']._serialized_options = b'\362\336\037\ryaml:\"sender\"'
+    _globals['_MSGTRANSFERPOSITIONS'].fields_by_name['new_owner']._loaded_options = None
+    _globals['_MSGTRANSFERPOSITIONS'].fields_by_name[
+        'new_owner'
+    ]._serialized_options = b'\362\336\037\020yaml:\"new_owner\"'
+    _globals['_MSGTRANSFERPOSITIONS']._loaded_options = None
+    _globals['_MSGTRANSFERPOSITIONS']._serialized_options = (
+        b'\202\347\260*\006sender\212\347\260*\035osmosis/cl-transfer-positions'
+    )
+    _globals['_MSGCREATEPOSITION']._serialized_start = 188
+    _globals['_MSGCREATEPOSITION']._serialized_end = 683
+    _globals['_MSGCREATEPOSITIONRESPONSE']._serialized_start = 686
+    _globals['_MSGCREATEPOSITIONRESPONSE']._serialized_end = 1068
+    _globals['_MSGADDTOPOSITION']._serialized_start = 1071
+    _globals['_MSGADDTOPOSITION']._serialized_end = 1519
+    _globals['_MSGADDTOPOSITIONRESPONSE']._serialized_start = 1522
+    _globals['_MSGADDTOPOSITIONRESPONSE']._serialized_end = 1725
+    _globals['_MSGWITHDRAWPOSITION']._serialized_start = 1728
+    _globals['_MSGWITHDRAWPOSITION']._serialized_end = 1965
+    _globals['_MSGWITHDRAWPOSITIONRESPONSE']._serialized_start = 1968
+    _globals['_MSGWITHDRAWPOSITIONRESPONSE']._serialized_end = 2129
+    _globals['_MSGCOLLECTSPREADREWARDS']._serialized_start = 2132
+    _globals['_MSGCOLLECTSPREADREWARDS']._serialized_end = 2282
+    _globals['_MSGCOLLECTSPREADREWARDSRESPONSE']._serialized_start = 2285
+    _globals['_MSGCOLLECTSPREADREWARDSRESPONSE']._serialized_end = 2465
+    _globals['_MSGCOLLECTINCENTIVES']._serialized_start = 2468
+    _globals['_MSGCOLLECTINCENTIVES']._serialized_end = 2619
+    _globals['_MSGCOLLECTINCENTIVESRESPONSE']._serialized_start = 2622
+    _globals['_MSGCOLLECTINCENTIVESRESPONSE']._serialized_end = 2930
+    _globals['_MSGFUNGIFYCHARGEDPOSITIONS']._serialized_start = 2933
+    _globals['_MSGFUNGIFYCHARGEDPOSITIONS']._serialized_end = 3097
+    _globals['_MSGFUNGIFYCHARGEDPOSITIONSRESPONSE']._serialized_start = 3099
+    _globals['_MSGFUNGIFYCHARGEDPOSITIONSRESPONSE']._serialized_end = 3188
+    _globals['_MSGTRANSFERPOSITIONS']._serialized_start = 3191
+    _globals['_MSGTRANSFERPOSITIONS']._serialized_end = 3383
+    _globals['_MSGTRANSFERPOSITIONSRESPONSE']._serialized_start = 3385
+    _globals['_MSGTRANSFERPOSITIONSRESPONSE']._serialized_end = 3415
+    _globals['_MSG']._serialized_start = 3418
+    _globals['_MSG']._serialized_end = 4320
 # @@protoc_insertion_point(module_scope)
