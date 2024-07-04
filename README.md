@@ -106,7 +106,7 @@ The publish workflow looks like this:
 
 ## Convert ProtoBuf Files to Python
 
-   **Requirements**
+### Requirements
    - protobuf-compiler installed on the computer
       
       For example in MacOs:
@@ -118,6 +118,7 @@ The publish workflow looks like this:
       pip install mypy-protobuf
       ```
 
+### Step by step
 
 1. **Some background**:
    - The Osmosis SDK uses protobuf files to communicate with the osmosis chain, similar to the Cosmos SDK.
@@ -137,7 +138,7 @@ The publish workflow looks like this:
    python generate_python_from_protobuf.py
    ```
 
-   - If the script runs successfully, the Python files will be generated in the `tmp` folder. Copy the files to their destination in the `osmosis_proto` folder. Try to maintain the same folder structure as the `repos_protobufs` folder, like how the protobuf files are organized.
+   - If the script runs successfully, the Python files will be generated in the `tmp` folder. Copy the files to their destination in the `osmosis_proto` folder. Try to maintain the same folder structure as the `repos_protobufs` folder, like how the protobuf files are organized. Read the section "Alert" below for more information.
 
    - If the script retrieves a "File not found" error, there is probably a missing dependency. This means some protobuf files of some SDK are not present in the `repos_protobufs` folder.
      1. The error will provide the name of the missing dependency.
@@ -146,3 +147,27 @@ The publish workflow looks like this:
         ```python
         GOGO_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "gogoproto")
         ```
+
+### Alert
+
+The version of the Protobuf compiler used in the files that are converted to `.py` contains an issue. The Protobuf compiler imports a non-existent library:
+
+```python
+from google.protobuf import runtime_version as _runtime_version
+```
+
+Additionally, the following code (an example) is included:
+
+```python
+_runtime_version.ValidateProtobufRuntimeVersion(
+    _runtime_version.Domain.PUBLIC,
+    5,
+    27,
+    1,
+    '',
+    'osmosis/concentratedliquidity/v1beta1/query.proto'
+)
+```
+
+This code needs to be manually removed from each generated `.py` file. While this is somewhat tedious, after making these changes, the compilation of the repository will work correctly.
+
