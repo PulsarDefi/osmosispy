@@ -106,6 +106,19 @@ The publish workflow looks like this:
 
 ## Convert ProtoBuf Files to Python
 
+   **Requirements**
+   - protobuf-compiler installed on the computer
+      
+      For example in MacOs:
+      ```sh
+      brew install protobuf
+      ```
+   - mypy-protobuf library installed on python
+      ```sh
+      pip install mypy-protobuf
+      ```
+
+
 1. **Some background**:
    - The Osmosis SDK uses protobuf files to communicate with the osmosis chain, similar to the Cosmos SDK.
    - The protobuf files of the most important SDKs on Cosmos are located in the `repos_protobufs` folder.
