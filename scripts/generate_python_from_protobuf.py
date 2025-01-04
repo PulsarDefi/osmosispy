@@ -9,37 +9,36 @@ def validate_proto_file(file_path):
         sys.exit(1)
 
 
+def get_proto_files_from_directories(directories):
+    proto_files = []
+    for directory in directories:
+        if not os.path.isdir(directory):
+            print(f"Directory not found: {directory}")
+            sys.exit(1)
+        for root, _, files in os.walk(directory):
+            for file in files:
+                if file.endswith(".proto"):
+                    proto_files.append(os.path.join(root, file))
+    return proto_files
+
+
 # Define the directories of the SDK repositories
 GENERATED_DIR = "./../tmp"
 ROOT_PROTO_DIR = "./../repos_protobufs"
-COSMOS_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "cosmos")
-IBC_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "ibc")
-COSMWASM_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "cosmwasm")
-TENDERMINT_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "tendermint")
 OSMOSIS_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "osmosis")
-GOGO_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "gogoproto")
+STRIDE_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "stride")
 
-# Choose the files you want to convert
-PROTO_FILES = [
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/poolmodel/concentrated/v1beta1/tx.proto"),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/params.proto"),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/genesis.proto"),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/gov.proto"),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/incentive_record.proto"),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/pool.proto"),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/position.proto"),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/query.proto"),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/tick_info.proto"),
-    os.path.join(OSMOSIS_PROTO_DIR, "concentratedliquidity/v1beta1/tx.proto"),
-]
+# Define the directories of the protobuf files
+PROTO_DIRECTORIES = [STRIDE_PROTO_DIR]
 
 
 os.makedirs(GENERATED_DIR, exist_ok=True)
+proto_files = get_proto_files_from_directories(PROTO_DIRECTORIES)
 
-for proto_file in PROTO_FILES:
+for proto_file in proto_files:
     validate_proto_file(proto_file)
 
-for proto_file in PROTO_FILES:
+for proto_file in proto_files:
     protoc_command = [
         "protoc",
         f"--proto_path={ROOT_PROTO_DIR}",
