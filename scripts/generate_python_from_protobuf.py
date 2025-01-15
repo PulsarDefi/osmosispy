@@ -27,9 +27,9 @@ GENERATED_DIR = "./../tmp"
 ROOT_PROTO_DIR = "./../repos_protobufs"
 OSMOSIS_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "osmosis")
 STRIDE_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "stride")
-
+DYDX_PROTO_DIR = os.path.join(ROOT_PROTO_DIR, "dydxprotocol")
 # Define the directories of the protobuf files
-PROTO_DIRECTORIES = [STRIDE_PROTO_DIR]
+PROTO_DIRECTORIES = [DYDX_PROTO_DIR]
 
 
 os.makedirs(GENERATED_DIR, exist_ok=True)
