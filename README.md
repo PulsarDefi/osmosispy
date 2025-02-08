@@ -1,10 +1,6 @@
-# Osmosis python SDK
+# Convert ProtoBuf Files to Python
 
-Python SDK for interacting with the Osmosis AMM.
-
-## Convert ProtoBuf Files to Python
-
-### Requirements
+## Requirements
    - protobuf-compiler installed on the computer
       
       For example in MacOs:
@@ -16,7 +12,7 @@ Python SDK for interacting with the Osmosis AMM.
       pip install mypy-protobuf
       ```
 
-### Step by step
+## Step by step
 
 1. **Some Background**:
 
@@ -58,7 +54,7 @@ Python SDK for interacting with the Osmosis AMM.
 
      3. Add the new proto files to the `repos_protobufs` folder.
 
-### Warning
+## Warning
 
 The version of the Protobuf compiler used in the files that are converted to `.py` contains an issue. The Protobuf compiler imports a non-existent library:
 
