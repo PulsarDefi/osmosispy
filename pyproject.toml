@@ -8,7 +8,7 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "3.11.*"
-protobuf = "^4.21.12"
+protobuf = ">=5.0.0, <7.0.0"
 protobuf-init = "^0.3.0"
 
 [build-system]
